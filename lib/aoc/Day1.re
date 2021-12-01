@@ -10,13 +10,13 @@ let calc_sliding_window = (input: list(int)) => {
 };
 
 // Compares l with r. If l < r, add one to initial_count. Returns the inital count
-let rec get_decentions = (input: list(int), initial_count: int) => switch(input) {
+let rec depth = (input: list(int), initial_count: int) => switch(input) {
 	| [l, r, ...rest] => get_decentions([r] @ rest, initial_count + (l < r ? 1 : 0))
 	| _ => initial_count
 };
 
 // Compares (1, 2, 3) with (2, 3, 4). If l < r, add one to initial_count. Returns the inital count
-let rec get_decentions_triple = (input: list(int), initial_count: int) => switch(input) {
+let rec depth2 = (input: list(int), initial_count: int) => switch(input) {
 	| [e1, e2, e3, e4, ...rest] => get_decentions_triple([e2, e3, e4] @ rest, (initial_count + calc_sliding_window([e1, e2, e3, e4])))
 	| _ => initial_count
 };

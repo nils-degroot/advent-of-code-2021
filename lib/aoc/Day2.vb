@@ -42,6 +42,7 @@ forward 2"
             Return _posForward * _posDepth
         End Function
     End Class
+
     Class Submarine2
         Private _posForward = 0
         Private _posAim = 0

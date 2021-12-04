@@ -15,7 +15,7 @@ let rec depth = (input: list(int), initial_count: int) => switch(input) {
 
 // Compares (1, 2, 3) with (2, 3, 4). If l < r, add one to initial_count. Returns the inital count
 let rec depth2 = (input: list(int), initial_count: int) => switch(input) {
-	| [e1, e2, e3, e4, ...rest] => get_decentions_triple([e2, e3, e4] @ rest, (initial_count + calc_sliding_window([e1, e2, e3, e4])))
+	| [e1, e2, e3, e4, ...rest] => depth2([e2, e3, e4] @ rest, (initial_count + calc_sliding_window([e1, e2, e3, e4])))
 	| _ => initial_count
 };
 
